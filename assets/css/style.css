@@ -1,0 +1,1185 @@
+/*--------------
+All Contents
+--------------*/
+
+/*-----------------
+1. Reset.css
+2. Helper Classes
+3. Hamburger and Menu Styling
+4. Homepage sections styling
+5. About Page Styling
+6. Portfolio Page
+7. Projecr Single Page Styling
+8. Contact Page Stylins
+9. All Media Queries
+------------------*/
+
+/*----- 1. Reset.css -----*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+hr {
+  border: solid grey 0.2px;
+  width: 100%;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* --- Common Styles ---*/
+
+h1 {
+  font-family: Consolas;
+  font-size: 16px;
+}
+
+p {
+  font-family: "Open Sans";
+  font-size: 14px;
+}
+
+/*----- Helper Classes -----*/
+
+html * {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Consolas;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+::-webkit-scrollbar {
+	display: none;
+}*/
+
+::-moz-selection {
+  color: #4c9cd3;
+  background: #ffffff;
+}
+
+::selection {
+  color: #fff;
+  background: #4c9cd3;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.custompadding {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.custom-padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  opacity: 1;
+  background-color: #f4f4f4;
+  z-index: 1001;
+  text-align: center;
+}
+
+.spacer {
+  width: 100%;
+  height: 50px;
+}
+
+.spacer-big {
+  width: 100%;
+  height: 100px;
+}
+
+/* -----Body Border -----*/
+
+#top,
+#bottom,
+#left,
+#right {
+  background: #ffffff;
+  position: fixed;
+  z-index: 111;
+}
+#left,
+#right {
+  top: 0;
+  bottom: 0;
+  width: 10px;
+}
+#left {
+  left: 0;
+}
+#right {
+  right: 0;
+}
+
+#top {
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+#bottom {
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+#top {
+  top: 0;
+}
+#bottom {
+  bottom: 0;
+}
+
+/* ------ Body Border End ------*/
+
+.logo {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  font-family: "Poppins";
+  font-size: 16px;
+  line-height: 1;
+  z-index: 11;
+  white-space: nowrap;
+  color: #222222;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+.spinner_section section {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin: 1% 2%;
+  padding: 20px;
+  display: flex;
+  zoom: 0.7;
+  -moz-transform: scale(0.7);
+  z-index: 1000;
+}
+
+.spinner {
+  animation: rotate 15s linear infinite;
+  -webkit-animation: rotate 15s linear infinite;
+  -moz-animation: rotate 15s linear infinite;
+  width: 174px;
+  height: 174px;
+  position: absolute;
+  background-image: url("../images/logoanimado_inglés\ .png");
+  background-position: center;
+}
+
+.spinner :hover {
+  transform: rotate(0deg);
+}
+
+.spinner2 {
+  animation: mercury-group 15s linear infinite;
+  -webkit-animation: mercury-group 15s linear infinite;
+  -moz-animation: mercury-group 15s linear infinite;
+  width: 154px;
+  height: 154px;
+  position: absolute;
+
+  margin: 0.67em 0px 0px 0.65em;
+}
+.spinner3 {
+  animation: mercury-group2 15s linear infinite;
+  -webkit-animation: mercury-group2 15s linear infinite;
+  -moz-animation: mercury-group2 15s linear infinite;
+  width: 55px;
+  height: 55px;
+  position: absolute;
+
+  margin: 3.8em 0px 0px 3.8em;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.path {
+  stroke-dasharray: 197;
+  stroke-dashoffset: 20;
+}
+
+.path2 {
+  stroke-dasharray: 72 25;
+}
+
+@keyframes mercury-group {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes mercury-group2 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.blob {
+  position: absolute;
+  top: -62vh;
+  filter: blur(3.5rem);
+  left: -20vw;
+  fill: rgb(233, 248, 69, 0.4);
+  width: 50vmax;
+  z-index: -3;
+  animation: move 15s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  background-image: url(data:image/png;base64,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);
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
+  38% {
+    transform: scale(0.8, 1) rotate(160deg);
+  }
+  40% {
+    transform: scale(0.8, 1) rotate(160deg);
+  }
+  78% {
+    transform: scale(1.3) rotate(-20deg);
+  }
+  80% {
+    transform: scale(1.3) rotate(-20deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.back-btn {
+  top: 10px;
+  font-size: 21px !important;
+}
+
+.text {
+  top: 13px;
+  font-size: 21px;
+}
+
+.logo:hover,
+.logo:focus {
+  text-decoration: none;
+  color: #333333;
+}
+
+/* -----------------------------------------------------
+------------- 3. Home Page CSS Starts Here -------------
+-------------------------------------------------------*/
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+#texture {
+  background: url(../images/texture3.png);
+  width: 100%;
+  height: 100%;
+  left: 0em;
+  top: -0em;
+  position: absolute;
+  z-index: 999;
+}
+.intro {
+  padding: 200px 0 200px 0;
+  position: relative;
+  background: url(../images/bgg.jpg);
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.intro .intro-title {
+  padding: 0 0 30px 0;
+}
+
+.intro .intro-title h1 {
+  font-family: Consolas;
+  font-size: 32px;
+  font-weight: 400 !important;
+  line-height: 1.3;
+  color: #ffffff;
+  padding: 5px 10px;
+  background: #3e3e3e;
+  display: inline-block;
+}
+
+.intro h1 {
+  font-family: MS UI Gothic;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #2d2c28;
+}
+
+.intro .sub-content {
+  padding: 20px 0 20px 0;
+}
+
+.intro .sub-content p span {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  margin-right: 10px;
+  color: #ffffff;
+}
+
+.intro .sub-content p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  color: #2d2c28;
+}
+
+/*-----------------------------------------------------
+------------- About Page Styling Starts ---------------
+-----------------------------------------------------*/
+
+.profile {
+  padding: 200px 0 200px 0;
+  background: url("../images/texture4.png");
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.profile .container::before {
+  content: "Profile";
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-family: "Inconsolata";
+  font-weight: 500;
+  color: #a1a1a1;
+  z-index: 11;
+}
+
+.profile-content .bold {
+  font-size: 16px;
+  font-weight: 400 !important;
+  color: #2d2c28;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 15px 0 0 0;
+}
+
+.profile-content p {
+  font-size: 15px;
+  color: #2d2c28;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin: 10px 0 0 0;
+}
+
+.profile-highlights {
+  background: url("../images/texture.png");
+  padding: 20px;
+  position: relative;
+  margin: 10vh 0;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.profile-highlights .experience h4,
+.profile-highlights .awards h4 {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 600;
+  margin: 0px 0 50px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.profile-highlights .experience ul {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.profile-highlights .experience ul li {
+  list-style-type: none;
+  margin: 10px 0 20px 0;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.profile-highlights .awards ul li {
+  list-style-type: none;
+  margin: 5px 0 20px 0;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+/*--------------------------------------------------------
+----------- Portfolio Section Styling Ends ---------------
+--------------------------------------------------------*/
+
+.work {
+  width: 100%;
+  height: 100%;
+  padding: 200px 0 100px 0;
+  background: url("../images/texture2.png");
+  background-image: cover;
+  position: relative;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.work .container::before {
+  content: "Projects";
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  font-family: "Inconsolata";
+  font-weight: 500;
+  color: #a1a1a1;
+  z-index: 11;
+}
+
+.work-single .work-description h1 {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #111;
+}
+
+.singular-portfolio-item {
+  text-decoration: none;
+}
+
+.singular-portfolio-item img {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: opacity 0.5s;
+}
+
+.singular-portfolio-item:hover img {
+  opacity: 0.6;
+}
+
+.singular-portfolio-item:hover,
+.singular-portfolio-item:focus {
+  text-decoration: none;
+}
+
+.singular-project-content {
+  padding: 30px 0 50px 0;
+}
+
+.singular-project-content h1 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #404040;
+}
+
+.singular-project-content p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #666666;
+  line-height: 1.4;
+  margin: 15px 0 0 0;
+}
+
+/*--------------------------------------------------------
+--------------- Services Styling Starts ------------------
+--------------------------------------------------------*/
+
+.services {
+  padding: 100px 0 100px 0;
+
+  position: relative;
+}
+
+.services .container::before {
+  content: "A bit about me";
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #a1a1a1;
+  z-index: 11;
+}
+
+.services .service-block {
+  padding: 50px 50px 60px 50px;
+}
+
+.services .service-block .icon {
+  padding: 0 0 40px 0;
+}
+
+.services .service-block .icon i {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  padding-left: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #4c9cd3;
+  background: #f9f9f9;
+  font-size: 62px;
+  font-weight: normal;
+  line-height: 2em;
+  box-shadow: 0 5px 15px #4c9cd3;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.services .service-block .icon i:hover {
+  background: #f3f3f3;
+  box-shadow: 0 5px 15px #c6e0ff;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.services .service-block .service-text p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/*-----------------------------------------------------
+--------------- Services Styling Ends -----------------
+-----------------------------------------------------*/
+
+/*-------------------------------------------------------------
+--------------- Single Project Styling Starts -----------------
+--------------------------------------------------------------*/
+
+.project-page {
+  padding: 100px 0 100px 0;
+  background: #f4f4f4;
+}
+
+.project-top h1 {
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #111111;
+}
+.project-top div {
+  padding: 20px 0;
+}
+.project-top {
+  display: flex;
+  flex-direction: row;
+  flex-grow: initial;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+
+.project-page .project-intro p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 20px 0 0 0;
+}
+
+.project-page .project-intro img {
+  margin: 0;
+}
+
+.project-nav {
+  padding: 100px 0 0 0;
+  overflow: hidden;
+}
+
+.project-main i {
+  font-size: 34px;
+  font-weight: 700;
+  color: #444444;
+}
+
+.project-nav .nav-icon {
+  display: inline;
+  font-size: 32px;
+  color: #666666;
+  float: left;
+}
+
+.project-nav .nav-icon.right {
+  display: inline;
+  float: right;
+}
+
+.project-nav .inner-nav {
+  display: inline;
+}
+
+.project-nav .inner-nav a {
+  display: block;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  margin: 8px 0 0 30px;
+  text-decoration: none;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.project-nav .right {
+  text-align: right;
+}
+
+.project-nav .right a {
+  display: block;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+  margin: 8px 30px 0 0;
+}
+
+.project-nav .inner-nav:hover a {
+  margin-left: 20px;
+}
+
+.project-nav .right:hover a {
+  margin-right: 20px;
+}
+
+.project-nav .project-main i {
+  font-size: 32px;
+  margin-top: 3px;
+}
+
+/*-------------------------------------------------------------
+--------------- Single Project Styling Starts -----------------
+--------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+--------------- Contact Page Styling Starts -----------------
+-------------------------------------------------------------*/
+
+.contact {
+  padding: 150px 50px 100px 50px;
+}
+
+.contact h1 {
+  font-family: "Playfair Display";
+  font-size: 42px;
+  font-weight: 700;
+  color: #c5283d;
+  letter-spacing: -1px;
+}
+
+.contact p {
+  font-family: Poppins;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 40px 0 0 0;
+  color: #666666;
+}
+
+.contact-form {
+  padding-top: 75px;
+}
+
+label {
+  display: block;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  text-align: left;
+}
+
+.form-control {
+  border: 0px;
+  border-radius: 0px;
+  margin-top: 10px;
+  background: transparent;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #999999;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.form-control:focus {
+  border-color: #ff0000;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control::-webkit-input-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #999999;
+}
+.form-control:-moz-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #999999;
+}
+.form-control::-moz-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #999999;
+}
+.form-control:-ms-input-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #999999;
+}
+
+.text-muted {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #222;
+}
+
+.text-muted strong {
+  color: #ff3333;
+}
+
+.btn-send {
+  font-family: Poppins;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  border-radius: 0px;
+  color: #ffffff;
+  background: #ff0000;
+  border-color: #ff0000;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-send:hover {
+  color: #ff0000;
+  background: transparent;
+  border-color: #ff0000;
+  outline: none !important;
+}
+
+.btn-send:focus {
+  color: #ffffff;
+  background: #ff0000;
+  border-color: #ff0000;
+  outline: none !important;
+}
+
+/* -------- Contact Section Styling Ends ---- */
+
+/* ----------------------------------------------------
+----------- Footer Styling Starts Here ----------------
+-----------------------------------------------------*/
+
+.footer {
+  padding: 100px 0 50px 0;
+  background: #2d2c28;
+  /*position: fixed;
+	left: 0px;
+  bottom: 0px;
+  right: 0;
+	z-index: 0;*/
+}
+
+.footer .contact-link {
+  padding: 0 0 100px 0;
+}
+
+.footer .contact-link img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.footer .contact-link a::before {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 1px;
+  background: #ffffff;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.footer .contact-link a {
+  font-family: Roboto;
+  font-size: 24px;
+  letter-spacing: 0;
+  color: #ffffff;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer .contact-link a:hover {
+  text-decoration: none;
+  -webkit-transform: scale(1.05);
+}
+
+.footer .contact-link a:focus {
+  text-decoration: none;
+}
+
+.footer .social ul {
+  list-style-type: none;
+  margin-top: 0;
+}
+
+.footer .social ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.footer .social ul li a {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.footer .social ul li a:hover {
+  color: #ffffff;
+}
+
+.footer .address {
+  text-align: right;
+}
+
+.footer .address h2 {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* -------------------------------------------------------
+----------- Bact-to-Top Styling Starts Here --------------
+---------------------------------------------------------*/
+
+.back-to-top {
+  background: #4c9cd3;
+  margin: 0;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  z-index: 90;
+  display: none;
+
+  text-decoration: none;
+  color: #0e1729;
+}
+
+.back-to-top i {
+  position: relative;
+  left: 15px;
+  top: 10px;
+  font-size: 24px;
+  color: #ffffff;
+  -webkit-transition: 200ms;
+  -moz-transition: 200ms;
+  -o-transition: 200ms;
+  transition: 200ms;
+}
+
+.back-to-top:hover {
+  background: #1d5276;
+  color: #ffffff;
+}
+
+.back-to-top:hover i {
+  top: 8px;
+}
+
+.back-to-top:focus {
+  color: #ffffff;
+}
+
+/*----------------------------------------------------
+------------- All ------------------------------------
+--------------------- Media --------------------------
+------------------------------- Queries --------------
+-----------------------------------------------------*/
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+  }
+
+  .intro {
+    padding: 250px 0 100px 0;
+  }
+
+  .intro .intro-title h1 {
+    font-size: 34px;
+  }
+
+  .intro h1 {
+    font-size: 30px;
+  }
+
+  .intro-1 {
+    padding: 150px 0 100px 0;
+  }
+
+  .intro-1 h1 {
+    font-size: 42px;
+  }
+
+  .profile {
+    padding: 200px 0 0 0;
+  }
+
+  .profile .container::before {
+    left: 100px;
+    top: 100px;
+  }
+
+  .profile-highlights {
+    padding: 75px;
+    margin-top: 0;
+  }
+
+  .work {
+    padding: 200px 0 0 0;
+  }
+
+  .work .container::before {
+    left: 100px;
+    top: 100px;
+  }
+
+  .services {
+    padding: 200px 0 100px 0;
+  }
+
+  .services .container::before {
+    left: 100px;
+    top: 100px;
+  }
+
+  .footer .contact-link a {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (max-width: 801px) {
+  .profile-highlights {
+    margin-top: 75px;
+  }
+}
